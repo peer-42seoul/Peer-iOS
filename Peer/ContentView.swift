@@ -12,7 +12,16 @@ struct ContentView: View {
 	@State var isSignIn = false
 
     var body: some View {
-		Text("hello")
+		ZStack {
+			if !isSignIn {
+				SplashView()
+			} else {
+				
+			}
+		}
+		.task {
+			
+		}
     }
 }
 

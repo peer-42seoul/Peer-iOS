@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		D618FBF62BA8856600DCCFEB /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = D618FBF52BA8856600DCCFEB /* Model.swift */; };
 		D618FBF82BA885C300DCCFEB /* Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = D618FBF72BA885C300DCCFEB /* Type.swift */; };
-		D618FBFB2BA886AC00DCCFEB /* PostsListProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D618FBFA2BA886AC00DCCFEB /* PostsListProtocol.swift */; };
+		D618FBFF2BA88BFA00DCCFEB /* MainPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D618FBFE2BA88BFA00DCCFEB /* MainPageView.swift */; };
 		D62637AD2B8C4180003F54E4 /* PeerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62637AC2B8C4180003F54E4 /* PeerApp.swift */; };
 		D62637AF2B8C4180003F54E4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62637AE2B8C4180003F54E4 /* ContentView.swift */; };
 		D62637B12B8C4181003F54E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D62637B02B8C4181003F54E4 /* Assets.xcassets */; };
@@ -17,6 +17,11 @@
 		D62637BE2B8C4181003F54E4 /* PeerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62637BD2B8C4181003F54E4 /* PeerTests.swift */; };
 		D62637C82B8C4181003F54E4 /* PeerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62637C72B8C4181003F54E4 /* PeerUITests.swift */; };
 		D62637CA2B8C4181003F54E4 /* PeerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62637C92B8C4181003F54E4 /* PeerUITestsLaunchTests.swift */; };
+		D6458AEC2BA9ADFA00D80FA9 /* NetworkProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6458AEB2BA9ADFA00D80FA9 /* NetworkProtocol.swift */; };
+		D6458AEE2BA9AE0A00D80FA9 /* NetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6458AED2BA9AE0A00D80FA9 /* NetworkModel.swift */; };
+		D6458AF02BA9B42000D80FA9 /* PostListNetworkProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6458AEF2BA9B42000D80FA9 /* PostListNetworkProtocol.swift */; };
+		D6458AF22BA9B48600D80FA9 /* PostListIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6458AF12BA9B48600D80FA9 /* PostListIntent.swift */; };
+		D6458AF42BA9B4E700D80FA9 /* PostListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6458AF32BA9B4E700D80FA9 /* PostListVM.swift */; };
 		D68BD8FA2BA8152600333D86 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68BD8F92BA8152600333D86 /* SplashView.swift */; };
 		D68F2D2C2BA884A8001A691B /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = D68F2D2B2BA884A8001A691B /* .swiftlint.yml */; };
 /* End PBXBuildFile section */
@@ -41,7 +46,7 @@
 /* Begin PBXFileReference section */
 		D618FBF52BA8856600DCCFEB /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		D618FBF72BA885C300DCCFEB /* Type.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Type.swift; sourceTree = "<group>"; };
-		D618FBFA2BA886AC00DCCFEB /* PostsListProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsListProtocol.swift; sourceTree = "<group>"; };
+		D618FBFE2BA88BFA00DCCFEB /* MainPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageView.swift; sourceTree = "<group>"; };
 		D62637A92B8C4180003F54E4 /* Peer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Peer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D62637AC2B8C4180003F54E4 /* PeerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeerApp.swift; sourceTree = "<group>"; };
 		D62637AE2B8C4180003F54E4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -52,6 +57,11 @@
 		D62637C32B8C4181003F54E4 /* PeerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PeerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D62637C72B8C4181003F54E4 /* PeerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeerUITests.swift; sourceTree = "<group>"; };
 		D62637C92B8C4181003F54E4 /* PeerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D6458AEB2BA9ADFA00D80FA9 /* NetworkProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProtocol.swift; sourceTree = "<group>"; };
+		D6458AED2BA9AE0A00D80FA9 /* NetworkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkModel.swift; sourceTree = "<group>"; };
+		D6458AEF2BA9B42000D80FA9 /* PostListNetworkProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListNetworkProtocol.swift; sourceTree = "<group>"; };
+		D6458AF12BA9B48600D80FA9 /* PostListIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListIntent.swift; sourceTree = "<group>"; };
+		D6458AF32BA9B4E700D80FA9 /* PostListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListVM.swift; sourceTree = "<group>"; };
 		D68BD8F92BA8152600333D86 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		D68F2D2B2BA884A8001A691B /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -84,7 +94,8 @@
 		D618FBF92BA8869300DCCFEB /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
-				D618FBFA2BA886AC00DCCFEB /* PostsListProtocol.swift */,
+				D6458AEB2BA9ADFA00D80FA9 /* NetworkProtocol.swift */,
+				D6458AEF2BA9B42000D80FA9 /* PostListNetworkProtocol.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -154,6 +165,7 @@
 		D68F2D232BA87410001A691B /* Intent */ = {
 			isa = PBXGroup;
 			children = (
+				D6458AF12BA9B48600D80FA9 /* PostListIntent.swift */,
 			);
 			path = Intent;
 			sourceTree = "<group>";
@@ -162,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				D68BD8F92BA8152600333D86 /* SplashView.swift */,
+				D618FBFE2BA88BFA00DCCFEB /* MainPageView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -170,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				D618FBF52BA8856600DCCFEB /* Model.swift */,
+				D6458AED2BA9AE0A00D80FA9 /* NetworkModel.swift */,
 				D618FBF72BA885C300DCCFEB /* Type.swift */,
 			);
 			path = Model;
@@ -178,6 +192,7 @@
 		D6E2F9D22B9EDE1B00D5BEBA /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				D6458AF32BA9B4E700D80FA9 /* PostListVM.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -335,10 +350,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				D618FBF82BA885C300DCCFEB /* Type.swift in Sources */,
+				D618FBFF2BA88BFA00DCCFEB /* MainPageView.swift in Sources */,
 				D62637AF2B8C4180003F54E4 /* ContentView.swift in Sources */,
+				D6458AF22BA9B48600D80FA9 /* PostListIntent.swift in Sources */,
+				D6458AEE2BA9AE0A00D80FA9 /* NetworkModel.swift in Sources */,
 				D62637AD2B8C4180003F54E4 /* PeerApp.swift in Sources */,
-				D618FBFB2BA886AC00DCCFEB /* PostsListProtocol.swift in Sources */,
+				D6458AEC2BA9ADFA00D80FA9 /* NetworkProtocol.swift in Sources */,
+				D6458AF42BA9B4E700D80FA9 /* PostListVM.swift in Sources */,
 				D618FBF62BA8856600DCCFEB /* Model.swift in Sources */,
+				D6458AF02BA9B42000D80FA9 /* PostListNetworkProtocol.swift in Sources */,
 				D68BD8FA2BA8152600333D86 /* SplashView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
