@@ -11,5 +11,8 @@ struct NetworkModel {
 	// API 호출 URL
 	var APIurl: String
 	// 호출 시 로딩 여부
-	var loading: Bool
+
+	init(APIurl: String) {
+		self.APIurl = APIurl
+	}
 }

@@ -40,6 +40,16 @@ struct Filter: Codable {
 	var place: String
 	var status: String
 	var tag: String
+
+	init() {
+		self.due1 = .aWeek
+		self.due2 = .twelveMonth
+		self.region1 = ""
+		self.region2 = ""
+		self.place = ""
+		self.status = ""
+		self.tag = ""
+	}
 }
 
 // 메인 화면에 보여질 게시물의 타입

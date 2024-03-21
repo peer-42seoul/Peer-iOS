@@ -17,13 +17,22 @@
 		D62637BE2B8C4181003F54E4 /* PeerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62637BD2B8C4181003F54E4 /* PeerTests.swift */; };
 		D62637C82B8C4181003F54E4 /* PeerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62637C72B8C4181003F54E4 /* PeerUITests.swift */; };
 		D62637CA2B8C4181003F54E4 /* PeerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62637C92B8C4181003F54E4 /* PeerUITestsLaunchTests.swift */; };
+		D644CF422BAC49C400853E4E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D644CF412BAC49C400853E4E /* LoginView.swift */; };
+		D644CF442BAC4C7E00853E4E /* NetworkVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D644CF432BAC4C7E00853E4E /* NetworkVM.swift */; };
 		D6458AEC2BA9ADFA00D80FA9 /* NetworkProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6458AEB2BA9ADFA00D80FA9 /* NetworkProtocol.swift */; };
 		D6458AEE2BA9AE0A00D80FA9 /* NetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6458AED2BA9AE0A00D80FA9 /* NetworkModel.swift */; };
 		D6458AF02BA9B42000D80FA9 /* PostListNetworkProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6458AEF2BA9B42000D80FA9 /* PostListNetworkProtocol.swift */; };
-		D6458AF22BA9B48600D80FA9 /* PostListIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6458AF12BA9B48600D80FA9 /* PostListIntent.swift */; };
-		D6458AF42BA9B4E700D80FA9 /* PostListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6458AF32BA9B4E700D80FA9 /* PostListVM.swift */; };
+		D6458AF22BA9B48600D80FA9 /* PostIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6458AF12BA9B48600D80FA9 /* PostIntent.swift */; };
+		D6458AF42BA9B4E700D80FA9 /* PostVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6458AF32BA9B4E700D80FA9 /* PostVM.swift */; };
 		D68BD8FA2BA8152600333D86 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68BD8F92BA8152600333D86 /* SplashView.swift */; };
 		D68F2D2C2BA884A8001A691B /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = D68F2D2B2BA884A8001A691B /* .swiftlint.yml */; };
+		D6C942A02BAAE95D00757B42 /* UserInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C9429F2BAAE95D00757B42 /* UserInfoModel.swift */; };
+		D6C942A22BAAE97E00757B42 /* ServiceDefaultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C942A12BAAE97E00757B42 /* ServiceDefaultModel.swift */; };
+		D6C942A42BAAE9A400757B42 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C942A32BAAE9A400757B42 /* PostModel.swift */; };
+		D6C942A62BAAE9D100757B42 /* TeamModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C942A52BAAE9D100757B42 /* TeamModel.swift */; };
+		D6C942A82BAAEA6500757B42 /* ShortModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C942A72BAAEA6500757B42 /* ShortModel.swift */; };
+		D6C942AA2BAAEA7600757B42 /* AlertModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C942A92BAAEA7600757B42 /* AlertModel.swift */; };
+		D6C942AC2BAAEA9A00757B42 /* MessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C942AB2BAAEA9A00757B42 /* MessageModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,13 +66,23 @@
 		D62637C32B8C4181003F54E4 /* PeerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PeerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D62637C72B8C4181003F54E4 /* PeerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeerUITests.swift; sourceTree = "<group>"; };
 		D62637C92B8C4181003F54E4 /* PeerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D644CF412BAC49C400853E4E /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		D644CF432BAC4C7E00853E4E /* NetworkVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkVM.swift; sourceTree = "<group>"; };
 		D6458AEB2BA9ADFA00D80FA9 /* NetworkProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProtocol.swift; sourceTree = "<group>"; };
 		D6458AED2BA9AE0A00D80FA9 /* NetworkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkModel.swift; sourceTree = "<group>"; };
 		D6458AEF2BA9B42000D80FA9 /* PostListNetworkProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListNetworkProtocol.swift; sourceTree = "<group>"; };
-		D6458AF12BA9B48600D80FA9 /* PostListIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListIntent.swift; sourceTree = "<group>"; };
-		D6458AF32BA9B4E700D80FA9 /* PostListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListVM.swift; sourceTree = "<group>"; };
+		D6458AF12BA9B48600D80FA9 /* PostIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostIntent.swift; sourceTree = "<group>"; };
+		D6458AF32BA9B4E700D80FA9 /* PostVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostVM.swift; sourceTree = "<group>"; };
 		D68BD8F92BA8152600333D86 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		D68F2D2B2BA884A8001A691B /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		D6C9429E2BAAC94D00757B42 /* env.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = env.xcconfig; sourceTree = "<group>"; };
+		D6C9429F2BAAE95D00757B42 /* UserInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoModel.swift; sourceTree = "<group>"; };
+		D6C942A12BAAE97E00757B42 /* ServiceDefaultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDefaultModel.swift; sourceTree = "<group>"; };
+		D6C942A32BAAE9A400757B42 /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
+		D6C942A52BAAE9D100757B42 /* TeamModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamModel.swift; sourceTree = "<group>"; };
+		D6C942A72BAAEA6500757B42 /* ShortModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortModel.swift; sourceTree = "<group>"; };
+		D6C942A92BAAEA7600757B42 /* AlertModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertModel.swift; sourceTree = "<group>"; };
+		D6C942AB2BAAEA9A00757B42 /* MessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +122,7 @@
 		D62637A02B8C4180003F54E4 = {
 			isa = PBXGroup;
 			children = (
+				D6C9429E2BAAC94D00757B42 /* env.xcconfig */,
 				D68F2D2B2BA884A8001A691B /* .swiftlint.yml */,
 				D62637AB2B8C4180003F54E4 /* Peer */,
 				D62637BC2B8C4181003F54E4 /* PeerTests */,
@@ -165,7 +185,7 @@
 		D68F2D232BA87410001A691B /* Intent */ = {
 			isa = PBXGroup;
 			children = (
-				D6458AF12BA9B48600D80FA9 /* PostListIntent.swift */,
+				D6458AF12BA9B48600D80FA9 /* PostIntent.swift */,
 			);
 			path = Intent;
 			sourceTree = "<group>";
@@ -174,6 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				D68BD8F92BA8152600333D86 /* SplashView.swift */,
+				D644CF412BAC49C400853E4E /* LoginView.swift */,
 				D618FBFE2BA88BFA00DCCFEB /* MainPageView.swift */,
 			);
 			path = View;
@@ -183,6 +204,13 @@
 			isa = PBXGroup;
 			children = (
 				D618FBF52BA8856600DCCFEB /* Model.swift */,
+				D6C942A52BAAE9D100757B42 /* TeamModel.swift */,
+				D6C942A72BAAEA6500757B42 /* ShortModel.swift */,
+				D6C942A92BAAEA7600757B42 /* AlertModel.swift */,
+				D6C942AB2BAAEA9A00757B42 /* MessageModel.swift */,
+				D6C942A32BAAE9A400757B42 /* PostModel.swift */,
+				D6C9429F2BAAE95D00757B42 /* UserInfoModel.swift */,
+				D6C942A12BAAE97E00757B42 /* ServiceDefaultModel.swift */,
 				D6458AED2BA9AE0A00D80FA9 /* NetworkModel.swift */,
 				D618FBF72BA885C300DCCFEB /* Type.swift */,
 			);
@@ -192,7 +220,8 @@
 		D6E2F9D22B9EDE1B00D5BEBA /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				D6458AF32BA9B4E700D80FA9 /* PostListVM.swift */,
+				D6458AF32BA9B4E700D80FA9 /* PostVM.swift */,
+				D644CF432BAC4C7E00853E4E /* NetworkVM.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -352,12 +381,21 @@
 				D618FBF82BA885C300DCCFEB /* Type.swift in Sources */,
 				D618FBFF2BA88BFA00DCCFEB /* MainPageView.swift in Sources */,
 				D62637AF2B8C4180003F54E4 /* ContentView.swift in Sources */,
-				D6458AF22BA9B48600D80FA9 /* PostListIntent.swift in Sources */,
+				D644CF442BAC4C7E00853E4E /* NetworkVM.swift in Sources */,
+				D6C942A42BAAE9A400757B42 /* PostModel.swift in Sources */,
+				D6458AF22BA9B48600D80FA9 /* PostIntent.swift in Sources */,
 				D6458AEE2BA9AE0A00D80FA9 /* NetworkModel.swift in Sources */,
+				D6C942A22BAAE97E00757B42 /* ServiceDefaultModel.swift in Sources */,
+				D6C942AC2BAAEA9A00757B42 /* MessageModel.swift in Sources */,
 				D62637AD2B8C4180003F54E4 /* PeerApp.swift in Sources */,
+				D6C942A02BAAE95D00757B42 /* UserInfoModel.swift in Sources */,
 				D6458AEC2BA9ADFA00D80FA9 /* NetworkProtocol.swift in Sources */,
-				D6458AF42BA9B4E700D80FA9 /* PostListVM.swift in Sources */,
+				D6458AF42BA9B4E700D80FA9 /* PostVM.swift in Sources */,
+				D6C942A62BAAE9D100757B42 /* TeamModel.swift in Sources */,
+				D6C942AA2BAAEA7600757B42 /* AlertModel.swift in Sources */,
+				D6C942A82BAAEA6500757B42 /* ShortModel.swift in Sources */,
 				D618FBF62BA8856600DCCFEB /* Model.swift in Sources */,
+				D644CF422BAC49C400853E4E /* LoginView.swift in Sources */,
 				D6458AF02BA9B42000D80FA9 /* PostListNetworkProtocol.swift in Sources */,
 				D68BD8FA2BA8152600333D86 /* SplashView.swift in Sources */,
 			);
@@ -517,6 +555,7 @@
 		};
 		D62637CE2B8C4181003F54E4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D6C9429E2BAAC94D00757B42 /* env.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -548,6 +587,7 @@
 		};
 		D62637CF2B8C4181003F54E4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D6C9429E2BAAC94D00757B42 /* env.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

@@ -7,4 +7,18 @@
 
 import Foundation
 
-protocol NetworkProtocol: PostListNetworkProtocol { }
+protocol NetworkProtocol {
+	// 네트워크 내부의 구조
+	var networkModel: NetworkModel { get set }
+
+	// 네트워크 Get
+	func fetchData(url: String, completion: @escaping (Data?, URLResponse?, Error?) -> Void)
+
+	// 네트워크 Post
+
+	// 네트워크 Put
+
+	// 네트워크 Delete
+
+
+}

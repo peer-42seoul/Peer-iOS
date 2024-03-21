@@ -9,22 +9,19 @@ import SwiftUI
 
 struct ContentView: View {
 
-	@State var isSignIn = false
+	@StateObject postVM: PostVM = PostVM(networkProtocol: )
 
     var body: some View {
 		ZStack {
-			if !isSignIn {
-				SplashView()
-			} else {
-				
-			}
+			SplashView()
 		}
 		.task {
-			
+			await postVM.process(intent: .open)
 		}
     }
 }
 
 #Preview {
     ContentView()
+		.environmentObject()
 }

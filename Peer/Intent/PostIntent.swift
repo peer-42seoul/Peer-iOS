@@ -1,5 +1,5 @@
 //
-//  PostListIntent.swift
+//  PostIntent.swift
 //  Peer
 //
 //  Created by Hosung Lim on 3/19/24.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum PostListIntent {
+enum PostIntent {
 	case open
 	case touchPost
 	case scroll

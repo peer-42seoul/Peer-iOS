@@ -1,5 +1,5 @@
 //
-//  PostListVM.swift
+//  PostVM.swift
 //  Peer
 //
 //  Created by Hosung Lim on 3/19/24.
@@ -7,22 +7,25 @@
 
 import Foundation
 
-class PostListVM: ObservableObject {
-	@Published private(set) var post: [Post]
+class PostVM: ObservableObject {
+	@Published private(set) var postListModel: PostsListModel = PostsListModel()
 
 	private let network: NetworkProtocol
 
-	func process(intent: PostListIntent) async {
+	func process(intent: PostIntent) async {
 		switch intent {
 		case .open:
-			post = await network.getPostList()
+			getPostList()
 		default:
 			return
 		}
 	}
 
+	func getPostList() {
+
+	}
+
 	init(networkProtocol: NetworkProtocol) {
 		self.network = networkProtocol
-		self.post = []
 	}
 }
