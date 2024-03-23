@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
 
-	@StateObject postVM: PostVM = PostVM(networkProtocol: )
+	@EnvironmentObject var postVM: PostVM
 
     var body: some View {
 		ZStack {
@@ -23,5 +23,5 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
-		.environmentObject()
+		.environmentObject(PostVM(networkProtocol: NetworkVM(networkModel: NetworkModel(APIurl: "https://" + (Bundle.main.infoDictionary?["API_URL"] as? String ?? "wrong")))))
 }

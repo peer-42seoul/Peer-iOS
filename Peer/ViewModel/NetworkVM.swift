@@ -10,10 +10,9 @@ import Foundation
 class NetworkVM: NetworkProtocol {
 	var networkModel: NetworkModel
 
-	func fetchData(url: String, completion: @escaping (Data?, URLResponse?, Error?) -> Void) {
+	func get(url: String, completion: @escaping (Data?, URLResponse?, Error?) -> Void) {
 		guard let url = URL(string: networkModel.APIurl + url) else {
 			fatalError("Missing Url")
-			return
 		}
 
 		let token = UserDefaults.standard.string(forKey: "Token") ?? nil

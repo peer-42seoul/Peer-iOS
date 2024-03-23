@@ -12,7 +12,7 @@ protocol NetworkProtocol {
 	var networkModel: NetworkModel { get set }
 
 	// 네트워크 Get
-	func fetchData(url: String, completion: @escaping (Data?, URLResponse?, Error?) -> Void)
+	func get(url: String, completion: @escaping (Data?, URLResponse?, Error?) -> Void)
 
 	// 네트워크 Post
 

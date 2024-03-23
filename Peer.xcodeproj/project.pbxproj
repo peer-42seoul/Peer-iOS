@@ -83,6 +83,7 @@
 		D6C942A72BAAEA6500757B42 /* ShortModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortModel.swift; sourceTree = "<group>"; };
 		D6C942A92BAAEA7600757B42 /* AlertModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertModel.swift; sourceTree = "<group>"; };
 		D6C942AB2BAAEA9A00757B42 /* MessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageModel.swift; sourceTree = "<group>"; };
+		D6D7AB832BAC898D006F8063 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +145,7 @@
 		D62637AB2B8C4180003F54E4 /* Peer */ = {
 			isa = PBXGroup;
 			children = (
+				D6D7AB832BAC898D006F8063 /* Info.plist */,
 				D618FBF92BA8869300DCCFEB /* Protocol */,
 				D68F2D232BA87410001A691B /* Intent */,
 				D6E2F9D22B9EDE1B00D5BEBA /* ViewModel */,
@@ -566,6 +568,7 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Peer/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -598,6 +601,7 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Peer/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
