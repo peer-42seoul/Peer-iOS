@@ -62,53 +62,46 @@ struct Post: Codable {
 }
 
 struct Tag: Codable {
-	var tagId: Int
-	var name: String
-	var color: String
-	var createdAt: Date
-	var updateAt: Date
-}
-
-struct PostTest: Codable {
-	var postId: Int
-	var title: String
-	var image: String
-	var userId: Int
-	var userNickname: String
-	var userThumbnail: String
-	var status: String
-	var tagList: [Tag]
-	var isFavorite: Bool
-	var recruitId: Int
+	let tagId: Int
+	let name, color: String
+	let createdAt, updatedAt: String?
 
 	enum CodingKeys: String, CodingKey {
-		case postID = "post_id"
+		case tagId
+		case name
+		case color
+		case createdAt
+		case updatedAt
+	}
+}
+
+// Post 객체를 나타내는 모델
+struct PostList: Codable {
+	let title: String
+	let image: String
+	let userID: Int
+	let userNickname: String
+	let userThumbnail: String?
+	let status: String
+	let tagList: [Tag]
+	let favorite: Bool
+	let recruitID: Int
+	let updatedAt: String
+//	let postID: Int
+
+	enum CodingKeys: String, CodingKey {
+//		case postID = "post_id"
 		case title
 		case image
-		case userId = "user_id"
+		case userID = "user_id"
 		case userNickname = "user_nickname"
 		case userThumbnail = "user_thumbnail"
 		case status
-		case tagList = "tag_list"
-		case isFavorite
-		case recruitId = "recruit_id"
+		case tagList = "tagList"
+		case recruitID = "recruit_id"
+		case favorite = "favorite"
+		case updatedAt
 	}
-
-
-	init(from decoder: Decoder) throws {
-		let container = try decoder.container(keyedBy: CodingKeys.self)
-		postId = try container.decode(Int.self, forKey: .postID)
-		title = try container.decode(String.self, forKey: .title)
-		image = try container.decode(String.self, forKey: .image)
-		userId = try container.decode(Int.self, forKey: .userId)
-		userNickname = try container.decode(String.self, forKey: .userNickname)
-		userThumbnail = try container.decode(String.self, forKey: .userThumbnail)
-		status = try container.decode(String.self, forKey: .status)
-		tagList = try container.decode([Tag].self, forKey: .tagList)
-		isFavorite = try container.decode(Bool.self, forKey: .isFavorite)
-		recruitId = try container.decode(Int.self, forKey: .recruitId)
-	}
-
 }
 
 // 게시물 내부의 정보

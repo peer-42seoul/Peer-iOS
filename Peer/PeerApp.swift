@@ -10,12 +10,12 @@ import SwiftUI
 @main
 struct PeerApp: App {
 
-	let network = NetworkVM(networkModel: NetworkModel(APIurl: "https://" + (Bundle.main.infoDictionary?["API_URL"] as? String ?? "wrong")))
+	@StateObject var post = PostListVM()
 
     var body: some Scene {
         WindowGroup {
             ContentView()
-				.environmentObject(PostVM(networkProtocol: network))
+				.environmentObject(post)
         }
     }
 }

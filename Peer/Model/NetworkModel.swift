@@ -8,11 +8,15 @@
 import Foundation
 
 struct NetworkModel {
+	var session: URLSession
 	// API 호출 URL
 	var APIurl: String
-	// 호출 시 로딩 여부
 
-	init(APIurl: String) {
-		self.APIurl = APIurl
+	init(
+		session: URLSession = URLSession.shared,
+		apiUrl: String = "https://" + (Bundle.main.infoDictionary?["API_URL"] as? String ?? "wrong")
+	) {
+		self.session = session
+		self.APIurl = apiUrl
 	}
 }

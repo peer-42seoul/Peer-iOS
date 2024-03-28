@@ -10,6 +10,10 @@ import Foundation
 enum PostIntent {
 	case open
 	case touchPost
+	case favorite
 	case scroll
 	case filter
+	case refresh
+	case search
+	case newPost
 }

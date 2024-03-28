@@ -9,19 +9,23 @@ import SwiftUI
 
 struct ContentView: View {
 
-	@EnvironmentObject var postVM: PostVM
+	@EnvironmentObject var post: PostListVM
 
     var body: some View {
 		ZStack {
-			SplashView()
+			if post.postListModel.loading {
+				SplashView()
+			} else {
+				MainPageView()
+			}
 		}
 		.task {
-			await postVM.process(intent: .open)
+			await post.process(intent: .open)
 		}
     }
 }
 
 #Preview {
     ContentView()
-		.environmentObject(PostVM(networkProtocol: NetworkVM(networkModel: NetworkModel(APIurl: "https://" + (Bundle.main.infoDictionary?["API_URL"] as? String ?? "wrong")))))
+		.environmentObject(PostListVM())
 }
