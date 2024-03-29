@@ -77,6 +77,7 @@ struct Tag: Codable {
 
 // Post 객체를 나타내는 모델
 struct PostList: Codable {
+	
 	let title: String
 	let image: String
 	let userID: Int

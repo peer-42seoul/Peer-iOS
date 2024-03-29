@@ -10,7 +10,7 @@ import Foundation
 protocol PostListGetProtocol {
 	// 메인 화면에서 보여질 게시물 들고 오기
 	// TODO: - 무한 스크롤
-	func getPostList() async
+	func getPostList() async throws
 	// 메인 화면에서 필터를 걸고 보여질 게시물 들고 오기
 	func getPorstListByFilter(filter: Filter) async
 	// 화면 땡기는 새로고침
@@ -33,26 +33,30 @@ class PostListVM: ObservableObject, PostListNetworkProtocol {
 
 	// intent 관리
 	func process(intent: PostIntent) async {
-		switch intent {
-		case .open:
-			await getPostList()
-		case .filter:
-			await getPorstListByFilter(filter: postListModel.filter)
-		case .scroll:
-			await getPostList()
-		case .refresh:
-			await refresh()
-		case .touchPost:
-			await enterPostDetail()
-		case .search:
-			await searchPost()
-		default:
-			return
+		do {
+			switch intent {
+			case .open:
+				try await getPostList()
+			case .filter:
+				await getPorstListByFilter(filter: postListModel.filter)
+			case .scroll:
+				try await getPostList()
+			case .refresh:
+				await refresh()
+			case .touchPost:
+				await enterPostDetail()
+			case .search:
+				await searchPost()
+			default:
+				return
+			}
+		} catch {
+			print("Error: \(error)")
 		}
 	}
 
 	@MainActor
-	func getPostList() async {
+	func getPostList() async throws {
 		postListModel.loading = true
 		let url = "/api/v1/recruit" + postListModel.filterToString
 		network.get(url: url) { [weak self] data, response, error in
@@ -65,7 +69,6 @@ class PostListVM: ObservableObject, PostListNetworkProtocol {
 						self?.postListModel.error = nil
 
 						self?.postListModel.loading = false
-						print("getPostList on")
 					} catch {
 						// 디코딩 과정에서 오류가 발생했을 때, 오류 처리 로직
 						print("JSON 디코딩 실패:", error)
@@ -80,23 +83,23 @@ class PostListVM: ObservableObject, PostListNetworkProtocol {
 	}
 
 	func getPorstListByFilter(filter: Filter) async {
-		<#code#>
+		return
 	}
 
 	func refresh() async {
-		<#code#>
+		return
 	}
 
 	func searchPost() async {
-		<#code#>
+		return
 	}
 
 	func enterPostDetail() async {
-		<#code#>
+		return
 	}
 
 	func createNewPost() async {
-		<#code#>
+		return
 	}
 
 	init(networkProtocol: NetworkProtocol = NetworkVM.shared) {
