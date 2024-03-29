@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct PeerApp: App {
+
+	@StateObject var post = PostListVM()
+
     var body: some Scene {
         WindowGroup {
             ContentView()
+				.environmentObject(post)
         }
     }
 }

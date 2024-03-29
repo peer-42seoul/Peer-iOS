@@ -9,13 +9,23 @@ import SwiftUI
 
 struct ContentView: View {
 
-	@State var isSignIn = false
+	@EnvironmentObject var post: PostListVM
 
     var body: some View {
-		Text("hello")
+		ZStack {
+			if post.postListModel.loading {
+				SplashView()
+			} else {
+				MainPageView()
+			}
+		}
+		.task {
+			await post.process(intent: .open)
+		}
     }
 }
 
 #Preview {
     ContentView()
+		.environmentObject(PostListVM())
 }
