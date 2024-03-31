@@ -10,11 +10,17 @@ import SwiftUI
 struct PostListView: View {
 	@EnvironmentObject var post: PostListVM
 	var body: some View {
-		// HEADER
-		PostListHeader()
-
-		// BODY
-		PostListBody()
+		ZStack {
+			Color("PrimaryBackground")
+			VStack {
+				// HEADER
+				PostListHeader()
+				// filter
+				PostListFilterView()
+				// BODY
+				PostListBody()
+			}
+		}
 	}
 }
 

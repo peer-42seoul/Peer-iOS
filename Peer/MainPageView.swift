@@ -18,6 +18,7 @@ struct MainPageView: View {
 
     var body: some View {
 		ZStack {
+			
 			TabView(selection: $tabIndex) {
 				PostListView()
 					.tag(0)
@@ -51,9 +52,6 @@ struct MainPageView: View {
 			}
 		}
 		.accentColor(Color("StrongPurple"))
-		.task {
-			await postList.process(intent: .open)
-		}
     }
 }
 

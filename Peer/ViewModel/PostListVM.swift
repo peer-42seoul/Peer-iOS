@@ -59,15 +59,14 @@ class PostListVM: ObservableObject, PostListNetworkProtocol {
 	func getPostList() async throws {
 		postListModel.loading = true
 		let url = "/api/v1/recruit" + postListModel.filterToString
-		network.get(url: url) { [weak self] data, response, error in
+		network.get(url: url) { [weak self] data, _, error in
 			DispatchQueue.main.async {
-				// TODO: - Response에 맞는 처리 필요
+				/// TODO: - Response에 맞는 처리 필요
 				if let data = data, error == nil {
 					do {
 						let posts = try JSONDecoder().decode(Pagenation<[PostList]>.self, from: data)
 						self?.postListModel.posts = posts.content
 						self?.postListModel.error = nil
-
 						self?.postListModel.loading = false
 					} catch {
 						// 디코딩 과정에서 오류가 발생했을 때, 오류 처리 로직
@@ -77,6 +76,7 @@ class PostListVM: ObservableObject, PostListNetworkProtocol {
 				} else {
 					// 네트워크 요청 실패 또는 데이터가 없을 때의 오류 처리 로직
 					self?.postListModel.error = error
+					print(error)
 				}
 			}
 		}

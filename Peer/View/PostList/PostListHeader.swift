@@ -21,6 +21,7 @@ struct PostListHeader: View {
 				}
 			}
 		}
+		.frame(height: 60)
     }
 }
 

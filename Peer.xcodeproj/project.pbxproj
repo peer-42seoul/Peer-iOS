@@ -49,6 +49,8 @@
 		D67D03BC2BB5AD3200C292FD /* AboutPageIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67D03BB2BB5AD3200C292FD /* AboutPageIntent.swift */; };
 		D68BD8FA2BA8152600333D86 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68BD8F92BA8152600333D86 /* SplashView.swift */; };
 		D68F2D2C2BA884A8001A691B /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = D68F2D2B2BA884A8001A691B /* .swiftlint.yml */; };
+		D69F06972BB8EB0100A6A204 /* PostListFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69F06962BB8EB0100A6A204 /* PostListFilterView.swift */; };
+		D69F069A2BB8FEAB00A6A204 /* CGSizeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69F06992BB8FEAB00A6A204 /* CGSizeExtension.swift */; };
 		D6C942A02BAAE95D00757B42 /* UserInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C9429F2BAAE95D00757B42 /* UserInfoModel.swift */; };
 		D6C942A22BAAE97E00757B42 /* ServiceDefaultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C942A12BAAE97E00757B42 /* ServiceDefaultModel.swift */; };
 		D6C942A42BAAE9A400757B42 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C942A32BAAE9A400757B42 /* PostModel.swift */; };
@@ -121,6 +123,8 @@
 		D67D03BB2BB5AD3200C292FD /* AboutPageIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutPageIntent.swift; sourceTree = "<group>"; };
 		D68BD8F92BA8152600333D86 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		D68F2D2B2BA884A8001A691B /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		D69F06962BB8EB0100A6A204 /* PostListFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListFilterView.swift; sourceTree = "<group>"; };
+		D69F06992BB8FEAB00A6A204 /* CGSizeExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGSizeExtension.swift; sourceTree = "<group>"; };
 		D6C9429E2BAAC94D00757B42 /* env.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = env.xcconfig; sourceTree = "<group>"; };
 		D6C9429F2BAAE95D00757B42 /* UserInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoModel.swift; sourceTree = "<group>"; };
 		D6C942A12BAAE97E00757B42 /* ServiceDefaultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDefaultModel.swift; sourceTree = "<group>"; };
@@ -182,6 +186,7 @@
 		D62637AB2B8C4180003F54E4 /* Peer */ = {
 			isa = PBXGroup;
 			children = (
+				D69F06982BB8FE9400A6A204 /* Extension */,
 				D6D7AB832BAC898D006F8063 /* Info.plist */,
 				D68F2D232BA87410001A691B /* Intent */,
 				D6E2F9D22B9EDE1B00D5BEBA /* ViewModel */,
@@ -226,6 +231,7 @@
 			children = (
 				D618FBFE2BA88BFA00DCCFEB /* PostListView.swift */,
 				D63F9AF62BB6939900B18DDD /* PostListHeader.swift */,
+				D69F06962BB8EB0100A6A204 /* PostListFilterView.swift */,
 				D63F9AF82BB693CC00B18DDD /* PostListBody.swift */,
 			);
 			path = PostList;
@@ -279,6 +285,14 @@
 				D67D03BB2BB5AD3200C292FD /* AboutPageIntent.swift */,
 			);
 			path = Intent;
+			sourceTree = "<group>";
+		};
+		D69F06982BB8FE9400A6A204 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				D69F06992BB8FEAB00A6A204 /* CGSizeExtension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		D6E2F9D02B9EDE0C00D5BEBA /* View */ = {
@@ -483,6 +497,7 @@
 			files = (
 				D618FBF82BA885C300DCCFEB /* Type.swift in Sources */,
 				D63F9B072BB6996800B18DDD /* SettingView.swift in Sources */,
+				D69F069A2BB8FEAB00A6A204 /* CGSizeExtension.swift in Sources */,
 				D618FBFF2BA88BFA00DCCFEB /* PostListView.swift in Sources */,
 				D62637AF2B8C4180003F54E4 /* ContentView.swift in Sources */,
 				D63F9B052BB6995500B18DDD /* HitchhikingView.swift in Sources */,
@@ -515,6 +530,7 @@
 				D67D039A2BB59C8600C292FD /* PostDetailVM.swift in Sources */,
 				D63F9B012BB6992F00B18DDD /* ShowCaseView.swift in Sources */,
 				D618FBF62BA8856600DCCFEB /* Model.swift in Sources */,
+				D69F06972BB8EB0100A6A204 /* PostListFilterView.swift in Sources */,
 				D67D039E2BB59CBC00C292FD /* AlertVM.swift in Sources */,
 				D67D03BC2BB5AD3200C292FD /* AboutPageIntent.swift in Sources */,
 				D67D03A42BB59CDE00C292FD /* TeamListVM.swift in Sources */,

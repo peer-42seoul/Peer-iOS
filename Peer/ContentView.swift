@@ -8,10 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
-
 	@EnvironmentObject var post: PostListVM
 
-    var body: some View {
+	var body: some View {
 		ZStack {
 			if post.postListModel.loading {
 				SplashView()
@@ -19,13 +18,15 @@ struct ContentView: View {
 				MainPageView()
 			}
 		}
-		.task {
-			await post.process(intent: .open)
+		.onAppear {
+			Task {
+				await post.process(intent: .open)
+			}
 		}
-    }
+	}
 }
 
 #Preview {
-    ContentView()
+	ContentView()
 		.environmentObject(PostListVM())
 }
