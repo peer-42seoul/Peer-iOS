@@ -33,6 +33,7 @@ class PostListVM: ObservableObject, PostListNetworkProtocol {
 
 	// intent 관리
 	func process(intent: PostIntent) async {
+		print("postlistVm is ")
 		do {
 			switch intent {
 			case .open:

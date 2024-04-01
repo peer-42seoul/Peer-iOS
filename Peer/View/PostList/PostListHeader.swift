@@ -12,12 +12,48 @@ struct PostListHeader: View {
 
     var body: some View {
 		GeometryReader { geometry in
-			VStack(spacing: 0) {
+			VStack(alignment: .center, spacing: 0) {
 				if !isHeaderHidden {
-					Text("여기는 헤더!")
-						.frame(height: 60)
-						.frame(maxWidth: .infinity)
-						.background(Color("TertiaryBackground"))
+					HStack(alignment: .center) {
+						// 알림 창
+						Button {
+
+						} label: {
+							Image(systemName: "bell")
+								.resizable()
+								.scaledToFit()
+								.foregroundColor(.white)
+								.frame(width: 30, height: 30)
+								.padding(10)
+
+						}
+
+						Spacer()
+
+						// 로고
+
+						Image("StringLogo")
+							.resizable()
+							.scaledToFit()
+							.frame(width: 80)
+
+						Spacer()
+
+						// 검색
+						Button {
+
+						} label: {
+							Image(systemName: "magnifyingglass")
+								.resizable()
+								.scaledToFit()
+								.foregroundColor(.white)
+								.frame(width: 30, height: 30)
+								.padding(10)
+
+						}
+					}
+					.frame(maxHeight: .infinity)
+					
 				}
 			}
 		}

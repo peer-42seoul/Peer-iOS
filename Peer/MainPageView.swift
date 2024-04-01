@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MainPageView: View {
-	@EnvironmentObject var postList: PostListVM
+	@EnvironmentObject var post: PostListVM
 
 	@State var tabIndex = 0
 
@@ -18,7 +18,6 @@ struct MainPageView: View {
 
     var body: some View {
 		ZStack {
-			
 			TabView(selection: $tabIndex) {
 				PostListView()
 					.tag(0)
