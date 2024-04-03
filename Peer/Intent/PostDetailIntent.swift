@@ -8,7 +8,7 @@
 import Foundation
 
 enum PostDetailIntent {
-	case goMain
+	case open
 	case submit
 	case like
 	case favorite

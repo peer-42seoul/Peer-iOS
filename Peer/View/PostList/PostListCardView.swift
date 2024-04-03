@@ -13,8 +13,8 @@ struct PostListImageView: View {
 		AsyncImage(url: URL(string: imageUrl)) { image in
 			image
 				.resizable()
-				.aspectRatio(1.75, contentMode: .fit)
-				.frame(width: .infinity, height: 225)
+				.aspectRatio(1.65, contentMode: .fit)
+				.frame(width: ScreenSize.screenWidth! - 40, height: 220)
 				.scaledToFill()
 				.clipShape(.rect(
 					topLeadingRadius: 24,
@@ -60,7 +60,7 @@ struct PostListCard: View {
 				VStack {
 					PostListImageView(imageUrl: post.image)
 				}
-				.frame(height: 225)
+				.frame(height: 220)
 			}
 
 			ZStack {
@@ -74,7 +74,9 @@ struct PostListCard: View {
 						Text(post.userNickname)
 							.font(.pretendardRegular16)
 							.foregroundColor(.alternativeText)
-							.frame(maxWidth: .infinity, alignment: .leading)
+							.frame(
+								maxWidth: ScreenSize.screenWidth! - 40,
+								alignment: .leading)
 							.lineLimit(1)
 
 						Spacer()
@@ -85,14 +87,10 @@ struct PostListCard: View {
 							Image(systemName: post.favorite ? "heart.fill" : "heart")
 								.resizable()
 								.scaledToFit()
-
 						}
 						.padding(10)
-
-
-
 					}
-					.frame(width: ScreenSize.screenWidth, height: 50)
+					.frame(width: ScreenSize.screenWidth! - 40, height: 50)
 
 					// 모집글의 제목
 					Text(post.title)
@@ -100,10 +98,27 @@ struct PostListCard: View {
 						.foregroundColor(.strongText)
 						.frame(maxWidth: .infinity, alignment: .leading)
 						.padding(10)
-
 					// 모집글 태그
+					HStack {
+						ForEach(post.tagList, id: \.name) { tag in
+							ZStack(alignment: .leading) {
+								Color(hex: tag.color)
+								ZStack {
+									Text(tag.name)
+								}
+								.padding(6)
+								.overlay(
+									RoundedRectangle(cornerRadius: 8)
+										.strokeBorder(
+											Color.assisitiveText,
+											lineWidth: 2)
+								)
+							}
+						}
+					}
+					.padding(10)
 				}
-				.frame(width: ScreenSize.screenWidth, height: 140)
+				.frame(width: ScreenSize.screenWidth! - 40, height: 160)
 			}
 			.clipShape(.rect(
 				topLeadingRadius: 0,
@@ -123,7 +138,9 @@ struct PostListCard: View {
 			userNickname: "test",
 			userThumbnail: nil,
 			status: "BEFORE",
-			tagList: [],
+			tagList: [
+				Tag(tagId: 1, name: "test", color: "red", createdAt: nil, updatedAt: nil)
+			],
 			favorite: false,
 			recruitID: 1,
 			updatedAt: "2024-01-25"

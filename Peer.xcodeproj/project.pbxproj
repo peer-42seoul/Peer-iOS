@@ -29,6 +29,7 @@
 		D6458AEE2BA9AE0A00D80FA9 /* NetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6458AED2BA9AE0A00D80FA9 /* NetworkModel.swift */; };
 		D6458AF22BA9B48600D80FA9 /* PostIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6458AF12BA9B48600D80FA9 /* PostIntent.swift */; };
 		D6458AF42BA9B4E700D80FA9 /* PostListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6458AF32BA9B4E700D80FA9 /* PostListVM.swift */; };
+		D6719AB52BBAA0D800A4EDC1 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6719AB42BBAA0D800A4EDC1 /* ColorExtension.swift */; };
 		D67D039A2BB59C8600C292FD /* PostDetailVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67D03992BB59C8600C292FD /* PostDetailVM.swift */; };
 		D67D039C2BB59CB600C292FD /* ProfileVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67D039B2BB59CB600C292FD /* ProfileVM.swift */; };
 		D67D039E2BB59CBC00C292FD /* AlertVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67D039D2BB59CBC00C292FD /* AlertVM.swift */; };
@@ -69,6 +70,7 @@
 		D6E1B7BE2BBA667D00FEFE88 /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D6E1B7B52BBA667D00FEFE88 /* Pretendard-SemiBold.otf */; };
 		D6E1B7C02BBA677200FEFE88 /* FontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E1B7BF2BBA677200FEFE88 /* FontExtension.swift */; };
 		D6E1B7C22BBA69D100FEFE88 /* PostListCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E1B7C12BBA69D100FEFE88 /* PostListCardView.swift */; };
+		D6E1B7C52BBA72D000FEFE88 /* PostDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E1B7C42BBA72D000FEFE88 /* PostDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +116,7 @@
 		D6458AED2BA9AE0A00D80FA9 /* NetworkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkModel.swift; sourceTree = "<group>"; };
 		D6458AF12BA9B48600D80FA9 /* PostIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostIntent.swift; sourceTree = "<group>"; };
 		D6458AF32BA9B4E700D80FA9 /* PostListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListVM.swift; sourceTree = "<group>"; };
+		D6719AB42BBAA0D800A4EDC1 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		D67D03992BB59C8600C292FD /* PostDetailVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailVM.swift; sourceTree = "<group>"; };
 		D67D039B2BB59CB600C292FD /* ProfileVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVM.swift; sourceTree = "<group>"; };
 		D67D039D2BB59CBC00C292FD /* AlertVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertVM.swift; sourceTree = "<group>"; };
@@ -156,6 +159,7 @@
 		D6E1B7B52BBA667D00FEFE88 /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
 		D6E1B7BF2BBA677200FEFE88 /* FontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontExtension.swift; sourceTree = "<group>"; };
 		D6E1B7C12BBA69D100FEFE88 /* PostListCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListCardView.swift; sourceTree = "<group>"; };
+		D6E1B7C42BBA72D000FEFE88 /* PostDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -316,6 +320,7 @@
 			children = (
 				D69F06992BB8FEAB00A6A204 /* CGSizeExtension.swift */,
 				D6E1B7BF2BBA677200FEFE88 /* FontExtension.swift */,
+				D6719AB42BBAA0D800A4EDC1 /* ColorExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -344,9 +349,18 @@
 			path = Pretendard;
 			sourceTree = "<group>";
 		};
+		D6E1B7C32BBA72C300FEFE88 /* PostDetail */ = {
+			isa = PBXGroup;
+			children = (
+				D6E1B7C42BBA72D000FEFE88 /* PostDetailView.swift */,
+			);
+			path = PostDetail;
+			sourceTree = "<group>";
+		};
 		D6E2F9D02B9EDE0C00D5BEBA /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D6E1B7C32BBA72C300FEFE88 /* PostDetail */,
 				D63F9AFF2BB6992000B18DDD /* Setting */,
 				D63F9AFE2BB6991700B18DDD /* Hitchhiking */,
 				D63F9AFD2BB6990E00B18DDD /* MyTeam */,
@@ -559,6 +573,7 @@
 				D618FBF82BA885C300DCCFEB /* Type.swift in Sources */,
 				D63F9B072BB6996800B18DDD /* SettingView.swift in Sources */,
 				D69F069A2BB8FEAB00A6A204 /* CGSizeExtension.swift in Sources */,
+				D6E1B7C52BBA72D000FEFE88 /* PostDetailView.swift in Sources */,
 				D618FBFF2BA88BFA00DCCFEB /* PostListView.swift in Sources */,
 				D62637AF2B8C4180003F54E4 /* ContentView.swift in Sources */,
 				D63F9B052BB6995500B18DDD /* HitchhikingView.swift in Sources */,
@@ -602,6 +617,7 @@
 				D68BD8FA2BA8152600333D86 /* SplashView.swift in Sources */,
 				D67D03A02BB59CC900C292FD /* ShowcaseVM.swift in Sources */,
 				D67D03B82BB5A9CF00C292FD /* TeamDetailIntent.swift in Sources */,
+				D6719AB52BBAA0D800A4EDC1 /* ColorExtension.swift in Sources */,
 				D63F9AFB2BB6946200B18DDD /* MainPageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

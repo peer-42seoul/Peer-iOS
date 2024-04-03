@@ -77,7 +77,7 @@ class PostListVM: ObservableObject, PostListNetworkProtocol {
 				} else {
 					// 네트워크 요청 실패 또는 데이터가 없을 때의 오류 처리 로직
 					self?.postListModel.error = error
-					print(error)
+					print(error!)
 				}
 			}
 		}

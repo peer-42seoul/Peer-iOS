@@ -9,18 +9,19 @@ import SwiftUI
 
 struct ContentView: View {
 	@EnvironmentObject var post: PostListVM
+	@State var isShow: Bool = false
 
 	var body: some View {
 		ZStack {
-			if post.postListModel.loading {
-				SplashView()
-			} else {
+			if isShow {
 				MainPageView()
-			}
-		}
-		.onAppear {
-			Task {
-				await post.process(intent: .open)
+			} else {
+				SplashView()
+					.onAppear {
+						DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+							isShow = true
+						}
+					}
 			}
 		}
 	}

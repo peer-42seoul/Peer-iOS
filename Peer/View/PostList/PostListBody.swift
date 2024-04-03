@@ -14,15 +14,19 @@ struct PostListBody: View {
 		ScrollView {
 			LazyVStack(spacing: 20) {
 				ForEach(postVm.postListModel.posts, id: \.title) { post in
-					PostListCard(post: post)
-						.overlay(
-							RoundedRectangle(cornerRadius: 24)
-								.strokeBorder(Color.assisitiveText, lineWidth: 2)
-						)
+					NavigationLink(destination: PostDetailView(postId: post.recruitID)) {
+						PostListCard(post: post)
+							.frame(width: ScreenSize.screenWidth! - 40)
+							.overlay(
+								RoundedRectangle(cornerRadius: 24)
+									.strokeBorder(Color.assisitiveText, lineWidth: 2)
+							)
+					}
 				}
 			}
 		}
 		.scrollIndicators(.hidden)
+
 	}
 }
 #Preview {
