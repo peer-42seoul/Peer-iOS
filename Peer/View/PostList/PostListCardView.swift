@@ -7,58 +7,19 @@
 
 import SwiftUI
 
-struct PostListImageView: View {
-	var imageUrl: String
-	var body: some View {
-		AsyncImage(url: URL(string: imageUrl)) { image in
-			image
-				.resizable()
-				.aspectRatio(1.65, contentMode: .fit)
-				.frame(width: ScreenSize.screenWidth! - 40, height: 220)
-				.scaledToFill()
-				.clipShape(.rect(
-					topLeadingRadius: 24,
-					bottomLeadingRadius: 0,
-					bottomTrailingRadius: 0,
-					topTrailingRadius: 24
-				))
-		} placeholder: {
-			ProgressView()
-		}
-	}
-}
-
-struct PostListProfileImageView: View {
-	var imageUrl: String?
-	var body: some View {
-		if imageUrl != nil {
-			AsyncImage(url: URL(string: imageUrl!)) { image in
-				image
-					.resizable()
-					.frame(width: 50, height: 50)
-					.cornerRadius(50.0)
-			} placeholder: {
-				ProgressView()
-			}
-			.padding(10)
-		} else {
-			Image("Icon")
-				.resizable()
-				.frame(width: 50, height: 50)
-				.cornerRadius(50.0)
-				.padding(10)
-		}
-
-	}
-}
-
 struct PostListCard: View {
 	var post: PostList
 	var body: some View {
 		VStack {
 			ZStack {
 				VStack {
-					PostListImageView(imageUrl: post.image)
+					AsyncImageView(imageUrl: post.image)
+						.clipShape(.rect(
+							topLeadingRadius: 24,
+							bottomLeadingRadius: 0,
+							bottomTrailingRadius: 0,
+							topTrailingRadius: 24
+						))
 				}
 				.frame(height: 220)
 			}
@@ -68,7 +29,13 @@ struct PostListCard: View {
 				VStack(alignment: .leading) {
 					HStack {
 						// 모집글의 메인 이미지
-						PostListProfileImageView(imageUrl: post.userThumbnail)
+						AsyncProfileImageView(imageUrl: post.userThumbnail)
+							.clipShape(.rect(
+								topLeadingRadius: 24,
+								bottomLeadingRadius: 0,
+								bottomTrailingRadius: 0,
+								topTrailingRadius: 24
+							))
 
 						// 모집글을 작성한 사람의 닉네임
 						Text(post.userNickname)
@@ -81,14 +48,7 @@ struct PostListCard: View {
 
 						Spacer()
 
-						Button {
-							// 실행할 코드
-						} label: {
-							Image(systemName: post.favorite ? "heart.fill" : "heart")
-								.resizable()
-								.scaledToFit()
-						}
-						.padding(10)
+						HeartButton(isClicked: post.favorite) {}
 					}
 					.frame(width: ScreenSize.screenWidth! - 40, height: 50)
 

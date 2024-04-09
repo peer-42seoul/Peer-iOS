@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D60FDE7A2BC546FF00354033 /* HeartButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60FDE792BC546FF00354033 /* HeartButton.swift */; };
+		D60FDE7C2BC5498700354033 /* MoreButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60FDE7B2BC5498700354033 /* MoreButton.swift */; };
+		D60FDE7F2BC54C6E00354033 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60FDE7E2BC54C6E00354033 /* Const.swift */; };
+		D60FDE832BC54D0700354033 /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60FDE822BC54D0700354033 /* AsyncImageView.swift */; };
+		D60FDE852BC54E1E00354033 /* MessageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60FDE842BC54E1E00354033 /* MessageButton.swift */; };
+		D60FDE892BC562B200354033 /* DocumentExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60FDE882BC562B200354033 /* DocumentExtension.swift */; };
 		D618FBF62BA8856600DCCFEB /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = D618FBF52BA8856600DCCFEB /* Model.swift */; };
 		D618FBF82BA885C300DCCFEB /* Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = D618FBF72BA885C300DCCFEB /* Type.swift */; };
 		D618FBFF2BA88BFA00DCCFEB /* PostListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D618FBFE2BA88BFA00DCCFEB /* PostListView.swift */; };
@@ -91,6 +97,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D60FDE792BC546FF00354033 /* HeartButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartButton.swift; sourceTree = "<group>"; };
+		D60FDE7B2BC5498700354033 /* MoreButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreButton.swift; sourceTree = "<group>"; };
+		D60FDE7E2BC54C6E00354033 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
+		D60FDE822BC54D0700354033 /* AsyncImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImageView.swift; sourceTree = "<group>"; };
+		D60FDE842BC54E1E00354033 /* MessageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageButton.swift; sourceTree = "<group>"; };
+		D60FDE882BC562B200354033 /* DocumentExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentExtension.swift; sourceTree = "<group>"; };
 		D618FBF52BA8856600DCCFEB /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		D618FBF72BA885C300DCCFEB /* Type.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Type.swift; sourceTree = "<group>"; };
 		D618FBFE2BA88BFA00DCCFEB /* PostListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListView.swift; sourceTree = "<group>"; };
@@ -187,6 +199,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D60FDE782BC546EF00354033 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				D60FDE802BC54CF100354033 /* Image */,
+				D60FDE7D2BC54C5F00354033 /* Buttons */,
+				D60FDE7E2BC54C6E00354033 /* Const.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		D60FDE7D2BC54C5F00354033 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				D60FDE792BC546FF00354033 /* HeartButton.swift */,
+				D60FDE7B2BC5498700354033 /* MoreButton.swift */,
+				D60FDE842BC54E1E00354033 /* MessageButton.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		D60FDE802BC54CF100354033 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				D60FDE822BC54D0700354033 /* AsyncImageView.swift */,
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
 		D62637A02B8C4180003F54E4 = {
 			isa = PBXGroup;
 			children = (
@@ -321,6 +361,7 @@
 				D69F06992BB8FEAB00A6A204 /* CGSizeExtension.swift */,
 				D6E1B7BF2BBA677200FEFE88 /* FontExtension.swift */,
 				D6719AB42BBAA0D800A4EDC1 /* ColorExtension.swift */,
+				D60FDE882BC562B200354033 /* DocumentExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -360,6 +401,7 @@
 		D6E2F9D02B9EDE0C00D5BEBA /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D60FDE782BC546EF00354033 /* Utils */,
 				D6E1B7C32BBA72C300FEFE88 /* PostDetail */,
 				D63F9AFF2BB6992000B18DDD /* Setting */,
 				D63F9AFE2BB6991700B18DDD /* Hitchhiking */,
@@ -498,6 +540,9 @@
 				Base,
 			);
 			mainGroup = D62637A02B8C4180003F54E4;
+			packageReferences = (
+				D60FDE862BC55DF700354033 /* XCRemoteSwiftPackageReference "swift-markdown" */,
+			);
 			productRefGroup = D62637AA2B8C4180003F54E4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -586,21 +631,27 @@
 				D67D03A62BB59CE500C292FD /* TeamDetailVM.swift in Sources */,
 				D6458AF22BA9B48600D80FA9 /* PostIntent.swift in Sources */,
 				D67D03BA2BB5AC9900C292FD /* MessageIntent.swift in Sources */,
+				D60FDE892BC562B200354033 /* DocumentExtension.swift in Sources */,
+				D60FDE7C2BC5498700354033 /* MoreButton.swift in Sources */,
 				D67D03AC2BB59FE900C292FD /* BottomTapbarIntent.swift in Sources */,
 				D6458AEE2BA9AE0A00D80FA9 /* NetworkModel.swift in Sources */,
 				D67D03A82BB59CEA00C292FD /* MessageVM.swift in Sources */,
 				D6C942A22BAAE97E00757B42 /* ServiceDefaultModel.swift in Sources */,
+				D60FDE832BC54D0700354033 /* AsyncImageView.swift in Sources */,
 				D6C942AC2BAAEA9A00757B42 /* MessageModel.swift in Sources */,
 				D67D03B62BB5A53500C292FD /* TeamListIntent.swift in Sources */,
 				D67D03B42BB5A52500C292FD /* HitchhikingIntent.swift in Sources */,
 				D62637AD2B8C4180003F54E4 /* PeerApp.swift in Sources */,
+				D60FDE7F2BC54C6E00354033 /* Const.swift in Sources */,
 				D6E1B7C02BBA677200FEFE88 /* FontExtension.swift in Sources */,
 				D67D039C2BB59CB600C292FD /* ProfileVM.swift in Sources */,
 				D67D03B22BB5A4D700C292FD /* ShowcaseIntent.swift in Sources */,
 				D6C942A02BAAE95D00757B42 /* UserInfoModel.swift in Sources */,
 				D67D03AE2BB5A18C00C292FD /* ProfileIntent.swift in Sources */,
 				D6458AF42BA9B4E700D80FA9 /* PostListVM.swift in Sources */,
+				D60FDE7A2BC546FF00354033 /* HeartButton.swift in Sources */,
 				D6C942A62BAAE9D100757B42 /* TeamModel.swift in Sources */,
+				D60FDE852BC54E1E00354033 /* MessageButton.swift in Sources */,
 				D67D03AA2BB59EBE00C292FD /* PostDetailIntent.swift in Sources */,
 				D63F9AF72BB6939900B18DDD /* PostListHeader.swift in Sources */,
 				D6C942AA2BAAEA7600757B42 /* AlertModel.swift in Sources */,
@@ -956,6 +1007,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D60FDE862BC55DF700354033 /* XCRemoteSwiftPackageReference "swift-markdown" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-markdown";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.3.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = D62637A12B8C4180003F54E4 /* Project object */;
 }
