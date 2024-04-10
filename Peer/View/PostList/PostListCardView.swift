@@ -10,16 +10,12 @@ import SwiftUI
 struct PostListCard: View {
 	var post: PostList
 	var body: some View {
-		VStack {
+		VStack(spacing: 0) {
 			ZStack {
 				VStack {
-					AsyncImageView(imageUrl: post.image)
-						.clipShape(.rect(
-							topLeadingRadius: 24,
-							bottomLeadingRadius: 0,
-							bottomTrailingRadius: 0,
-							topTrailingRadius: 24
-						))
+					AsyncImageView(
+						bottomSharpen: true, imageUrl: post.image
+					)
 				}
 				.frame(height: 220)
 			}
@@ -30,12 +26,7 @@ struct PostListCard: View {
 					HStack {
 						// 모집글의 메인 이미지
 						AsyncProfileImageView(imageUrl: post.userThumbnail)
-							.clipShape(.rect(
-								topLeadingRadius: 24,
-								bottomLeadingRadius: 0,
-								bottomTrailingRadius: 0,
-								topTrailingRadius: 24
-							))
+							.padding(10)
 
 						// 모집글을 작성한 사람의 닉네임
 						Text(post.userNickname)
@@ -57,7 +48,9 @@ struct PostListCard: View {
 						.font(.pretendardMedium18)
 						.foregroundColor(.strongText)
 						.frame(maxWidth: .infinity, alignment: .leading)
+						.lineLimit(1)
 						.padding(10)
+
 					// 모집글 태그
 					HStack {
 						ForEach(post.tagList, id: \.name) { tag in

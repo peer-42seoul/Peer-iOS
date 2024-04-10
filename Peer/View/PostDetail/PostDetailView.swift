@@ -16,23 +16,11 @@ struct PostDetailView: View {
 			Color(.primaryBackground)
 				.ignoresSafeArea()
 			VStack {
-				HStack {
-					Spacer()
-					HeartButton(isClicked: postDetailModel.postDetail.favorite) {
-
-					}
-					.frame(width: 50)
-
-					MoreButton {
-
-					}
-					.frame(width: 50)
-				}
-				.frame(height: 60)
 				// 디테일뷰 Header
 				ScrollView {
 					VStack {
-						Text("스터디 or 프로젝트") // API 수정 필요
+						Text("스터디 or 프로젝트") 
+						// TODO: - API 수정 필요
 						HStack(alignment: .center) {
 							Text(postDetailModel.postDetail.title)
 								.font(.pretendardBold28)
@@ -40,175 +28,77 @@ struct PostDetailView: View {
 									alignment: .leading)
 								.lineLimit(1)
 							Spacer()
+							// TODO: - 상태에 맞는 태그 필요
 							Text(postDetailModel.postDetail.status)
 						}
 						// 모집글의 이미지
 						AsyncImageView(imageUrl: postDetailModel.postDetail.image)
-							.clipShape(.rect(
-								topLeadingRadius: 24,
-								bottomLeadingRadius: 24,
-								bottomTrailingRadius: 24,
-								topTrailingRadius: 24
-							))
 
-						HStack {
-							// 팀장의 프로필 정보와 메세지 보내기
-							AsyncProfileImageView(imageUrl: postDetailModel.postDetail.leaderImage)
-							Text(postDetailModel.postDetail.leaderNickname)
-								.font(.pretendardMedium18)
-								.frame(
-									maxWidth: 130,
-									alignment: .leading)
-								.lineLimit(1)
-							Spacer()
-							MessageButton {
-
-							}
-							.frame(width: 50)
-							.clipShape(
-								Circle()
-							)
-						}
+						// 팀장의 프로필 정보와 메세지 보내기 버튼
+						PostDetailLeader(
+							imageUrl: postDetailModel.postDetail.leaderImage,
+							nickname: postDetailModel.postDetail.leaderNickname)
 					}
 					Divider()
 						.frame(height: 3)
 						.overlay(Color.gray.opacity(0.4))
 
 					VStack(spacing: 16) {
-						VStack(alignment: .leading, spacing: 8) {
-							HStack(alignment: .center) {
-								Image(systemName: "person")
-									.font(.pretendardBold18)
-								Text("팀명")
-									.font(.pretendardBold18)
-									.frame(
-										maxWidth: .infinity,
-										alignment: .leading)
-							}
-							Text(postDetailModel.postDetail.teamName)
-								.font(.pretendardMedium16)
-								.foregroundColor(.alternativeText)
-						}
+						// 팀명에 대한 설명
+						PostDetailTeamName(teamName: postDetailModel.postDetail.teamName)
 
-						VStack(alignment: .leading, spacing: 8) {
-							HStack(alignment: .center) {
-								Image(systemName: "person.2.fill")
-									.font(.pretendardBold18)
+						// 팀 인원에 대한 설명
+						PostDetailHeadCount(
+							currentCount: postDetailModel.postDetail.current,
+							totalCount: postDetailModel.postDetail.totalNumber)
 
-								Text("인원")
-									.font(.pretendardBold18)
-									.frame(
-										maxWidth: .infinity,
-										alignment: .leading)
-							}
-							Text("\(postDetailModel.postDetail.current ?? 0)/\(postDetailModel.postDetail.totalNumber)명")
-								.font(.pretendardMedium16)
-								.foregroundColor(.alternativeText)
-						}
+						// 활동 방식에 대한 설명
+						PostDetailActType(actType: postDetailModel.postDetail.place)
 
-						VStack(alignment: .leading, spacing: 8) {
-							HStack(alignment: .center) {
-								Image(systemName: "wifi")
-									.font(.pretendardBold18)
+						// 목표 시간에 대한 설명
+						PostDetailDue(due: postDetailModel.postDetail.due)
 
-								Text("활동 방식")
-									.font(.pretendardBold18)
-									.frame(
-										maxWidth: .infinity,
-										alignment: .leading)
-							}
-							Text(postDetailModel.postDetail.place)
-								.font(.pretendardMedium16)
-								.foregroundColor(.alternativeText)
-						}
+						// 활동 지역에 대한 설명
+						PostDetailRegion(
+							region0: postDetailModel.postDetail.region?[0],
+							region1: postDetailModel.postDetail.region?[1]
+						)
 
-						VStack(alignment: .leading, spacing: 8) {
-							HStack(alignment: .center) {
-								Image(systemName: "clock")
-									.font(.pretendardBold18)
+						// 관련 태그 모음
+						PostDetailTagList(tagList: postDetailModel.postDetail.tagList)
 
-								Text("목표시간")
-									.font(.pretendardBold18)
-									.frame(
-										maxWidth: .infinity,
-										alignment: .leading)
-							}
-							Text(postDetailModel.postDetail.due)
-								.font(.pretendardMedium16)
-								.foregroundColor(.alternativeText)
-						}
-
-						VStack(alignment: .leading, spacing: 8) {
-							HStack(alignment: .center) {
-								Image(systemName: "location.fill")
-									.font(.pretendardBold18)
-
-								Text("지역")
-									.font(.pretendardBold18)
-									.frame(
-										maxWidth: .infinity,
-										alignment: .leading)
-							}
-							Text("\(postDetailModel.postDetail.region?[0] ?? "없음") \(postDetailModel.postDetail.region?[1] ?? "")")
-								.font(.pretendardMedium16)
-								.foregroundColor(.alternativeText)
-						}
-
-						VStack(alignment: .leading, spacing: 8) {
-							HStack(alignment: .center) {
-								Image(systemName: "tag")
-									.font(.pretendardBold18)
-
-								Text("관련 태그")
-									.font(.pretendardBold18)
-									.frame(
-										maxWidth: .infinity,
-										alignment: .leading)
-							}
-							HStack {
-								ForEach(postDetailModel.postDetail.tagList, id: \.color) { tag in
-									Text(tag.name)
-										.font(.pretendardMedium16)
-										.foregroundColor(.alternativeText)
-								}
-							}
-						}
-
-						VStack(alignment: .leading, spacing: 8) {
-							HStack(alignment: .center) {
-								Image(systemName: "note.text")
-									.font(.pretendardBold18)
-
-								Text("설명")
-									.font(.pretendardBold18)
-									.frame(
-										maxWidth: .infinity,
-										alignment: .leading)
-							}
-
-							
-
-							if let attributedString = try? AttributedString(
-								markdown: postDetailModel.postDetail.content,
-								options: .init(interpretedSyntax: .inlineOnlyPreservingWhitespace)
-							) {
-								Text(attributedString)
-									.font(.pretendardRegular16)
-							} else {
-								// 마크다운 파싱 실패 시 대체 텍스트 표시
-								Text("마크다운을 렌더링할 수 없습니다.")
-									.font(.pretendardRegular16)
-							}
-
-						}
-
+						// 모집글을 설명하는 부분
+						PostDetailContent(content: postDetailModel.postDetail.content)
 					}
 				}
+				.scrollIndicators(.hidden)
 				.padding(.horizontal)
 				// 디테일뷰 Body
 				Spacer()
+
+				HStack(alignment: .center, spacing: 10) {
+					Button {
+						// TODO: - 지원하기 API
+					} label: {
+						Text("지원하기")
+							.frame(maxWidth: 270, minHeight: 40)
+					}
+					.buttonStyle(.borderedProminent)
+					.disabled(postDetailModel.postDetail.status == "RECRUIT")
+
+					HeartButton(isClicked: postDetailModel.postDetail.favorite) {
+						// TODO: - 좋아요 API
+					}
+					.frame(width: 50)
+				}
 			}
 		}
+		.toolbar(content: {
+			MoreButton {
+				// TODO: - 눌렀을 때 설정 보이게, 아마 bottomsheet?
+			}
+			.frame(width: 50)
+		})
 		.onAppear {
 			Task {
 				await postDetailModel.process(intent: .open)
@@ -223,5 +113,5 @@ struct PostDetailView: View {
 }
 
 #Preview {
-	PostDetailView(postId: 106)
+	PostDetailView(postId: 109)
 }
