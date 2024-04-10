@@ -53,20 +53,14 @@ struct PostListCard: View {
 
 					// 모집글 태그
 					HStack {
-						ForEach(post.tagList, id: \.name) { tag in
+						ForEach(post.tagList.prefix(3), id: \.name) { tag in
 							ZStack(alignment: .leading) {
-								Color(hex: tag.color)
-								ZStack {
-									Text(tag.name)
-								}
-								.padding(6)
-								.overlay(
-									RoundedRectangle(cornerRadius: 8)
-										.strokeBorder(
-											Color.assisitiveText,
-											lineWidth: 2)
-								)
+								TagView(name: tag.name, color: tag.color)
+
 							}
+						}
+						if post.tagList.count - 3 > 0 {
+							Text("외 \(post.tagList.count - 3)개")
 						}
 					}
 					.padding(10)
@@ -92,6 +86,14 @@ struct PostListCard: View {
 			userThumbnail: nil,
 			status: "BEFORE",
 			tagList: [
+				Tag(tagId: 1, name: "test", color: "red", createdAt: nil, updatedAt: nil),
+				Tag(tagId: 1, name: "test", color: "#FF00FF", createdAt: nil, updatedAt: nil),
+				Tag(tagId: 1, name: "test", color: "red", createdAt: nil, updatedAt: nil),
+				Tag(tagId: 1, name: "test", color: "red", createdAt: nil, updatedAt: nil),
+				Tag(tagId: 1, name: "test", color: "red", createdAt: nil, updatedAt: nil),
+				Tag(tagId: 1, name: "test", color: "red", createdAt: nil, updatedAt: nil),
+				Tag(tagId: 1, name: "test", color: "red", createdAt: nil, updatedAt: nil),
+				Tag(tagId: 1, name: "test", color: "red", createdAt: nil, updatedAt: nil),
 				Tag(tagId: 1, name: "test", color: "red", createdAt: nil, updatedAt: nil)
 			],
 			favorite: false,

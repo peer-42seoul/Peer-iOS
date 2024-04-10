@@ -113,5 +113,5 @@ struct PostDetailView: View {
 }
 
 #Preview {
-	PostDetailView(postId: 109)
+	PostDetailView(postId: 107)
 }

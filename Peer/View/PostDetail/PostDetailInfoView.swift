@@ -10,7 +10,7 @@ import SwiftUI
 struct PostDetailLeader: View {
 	var imageUrl: String?
 	var nickname: String
-    var body: some View {
+	var body: some View {
 		HStack {
 			AsyncProfileImageView(imageUrl: imageUrl)
 
@@ -29,7 +29,7 @@ struct PostDetailLeader: View {
 				Circle()
 			)
 		}
-    }
+	}
 }
 
 struct PostDetailTeamName: View {
@@ -136,11 +136,12 @@ struct PostDetailTagList: View {
 						maxWidth: .infinity,
 						alignment: .leading)
 			}
-			HStack {
-				ForEach(tagList, id: \.color) { tag in
-					Text(tag.name)
-						.font(.pretendardMedium16)
-						.foregroundColor(.alternativeText)
+
+			ScrollView(.horizontal) {
+				HStack {
+					ForEach(tagList, id: \.color) { tag in
+						TagView(name: tag.name, color: tag.color)
+					}
 				}
 			}
 		}

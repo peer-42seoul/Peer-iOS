@@ -41,7 +41,7 @@ class PostListVM: ObservableObject, PostListNetworkProtocol {
 			case .filter:
 				await getPorstListByFilter(filter: postListModel.filter)
 			case .scroll:
-				try await getPostList()
+				try await getPostListPagination()
 			case .refresh:
 				await refresh()
 			case .touchPost:
@@ -59,7 +59,7 @@ class PostListVM: ObservableObject, PostListNetworkProtocol {
 	@MainActor
 	func getPostList() async throws {
 		postListModel.loading = true
-		let url = "/api/v1/recruit" + postListModel.filterToString
+		let url = "/api/v1/recruit" + postListModel.filterToStringTest
 		network.get(url: url) { [weak self] data, _, error in
 			DispatchQueue.main.async {
 				/// TODO: - Response에 맞는 처리 필요
@@ -67,6 +67,34 @@ class PostListVM: ObservableObject, PostListNetworkProtocol {
 					do {
 						let posts = try JSONDecoder().decode(Pagenation<[PostList]>.self, from: data)
 						self?.postListModel.posts = posts.content
+						self?.postListModel.error = nil
+						self?.postListModel.loading = false
+					} catch {
+						// 디코딩 과정에서 오류가 발생했을 때, 오류 처리 로직
+						print("JSON 디코딩 실패:", error)
+						self?.postListModel.error = error
+					}
+				} else {
+					// 네트워크 요청 실패 또는 데이터가 없을 때의 오류 처리 로직
+					self?.postListModel.error = error
+					print(error!)
+				}
+			}
+		}
+	}
+
+	@MainActor
+	func getPostListPagination() async throws {
+		postListModel.loading = true
+		postListModel.page += 1
+		let url = "/api/v1/recruit" + postListModel.testPagination
+		network.get(url: url) { [weak self] data, _, error in
+			DispatchQueue.main.async {
+				/// TODO: - Response에 맞는 처리 필요
+				if let data = data, error == nil {
+					do {
+						let posts = try JSONDecoder().decode(Pagenation<[PostList]>.self, from: data)
+						self?.postListModel.posts += posts.content
 						self?.postListModel.error = nil
 						self?.postListModel.loading = false
 					} catch {

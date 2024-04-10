@@ -21,6 +21,16 @@ struct PostListBody: View {
 								RoundedRectangle(cornerRadius: 24)
 									.strokeBorder(Color.assisitiveText, lineWidth: 2)
 							)
+							.onAppear {
+								guard let index = postVm.postListModel.posts
+									.firstIndex(
+										where: { $0.recruitID == post.recruitID} ) else { return }
+								if index % 10 == 8 {
+									Task {
+										await postVm.process(intent: .scroll)
+									}
+								}
+							}
 					}
 				}
 			}

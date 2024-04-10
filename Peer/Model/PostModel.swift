@@ -17,21 +17,35 @@ struct PostsListModel {
 	var type: PostType
 	// 필터 설정 값 :
 	var filter: Filter
+	var sort: String
+	var keyword: String
 	// 로딩 중인지
 	var loading: Bool = false
 	var error: Error?
 
 	init() {
 		self.posts = []
-		self.type = .ALL
+		self.type = .STUDY
 		self.filter = Filter()
+		self.sort = "latest"
+		self.keyword = ""
 	}
 }
 
 // 필터에 대한 모델
 extension PostsListModel {
+	var filterToStringTest: String {
+		let filter = "?type=STUDY&sort=latest&page=1&pageSize=10&keyword=&due=1주일&due=12개월 이상&region1=&region2=&place=&status=&tag="
+		return filter
+	}
+
 	var filterToString: String {
-		let filter = "?type=STUDY&sort=latest&page=1&pageSize=6&keyword=&due=1주일&due=12개월 이상&region1=&region2=&place=&status=&tag="
+		let filter = "?type=\(type)&sort=\(sort)&page=\(page)&pageSize=10&keyword=\(keyword)&due=\(filter.due1)&due=\(filter.region2)&region1=\(filter.region1)&region2=\(filter.region2)&place=\(filter.place)&status=\(filter.status)&tag=\(filter.tag)"
+		return filter
+	}
+
+	var testPagination: String {
+		let filter = "?type=STUDY&sort=latest&page=\(page)&pageSize=10&keyword=&due=1주일&due=12개월 이상&region1=&region2=&place=&status=&tag="
 		return filter
 	}
 }

@@ -26,7 +26,9 @@ struct PostListView: View {
 			}
 			.onAppear {
 				Task {
-					await post.process(intent: .open)
+					if post.postListModel.posts.isEmpty {
+						await post.process(intent: .open)
+					}
 				}
 			}
 		}
