@@ -34,30 +34,6 @@ struct PostListFilterView: View {
 	}
 }
 
-struct FilteringBottomSheet: View {
-	@Environment(\.presentationMode) var presentationMode
-	var body: some View {
-		ZStack {
-			Color.tertiaryBackground
-				.ignoresSafeArea()
-			VStack {
-				HStack {
-					Spacer()
-					Button(action: {
-						presentationMode.wrappedValue.dismiss()
-					}) {
-						Image(systemName: "xmark")
-					}
-				}
-				.padding(20)
-				Spacer()
-				
-				Spacer()
-			}
-		}
-	}
-}
-
 struct SortPostItem: View {
 	var name: String
 	var action: () -> Void // 탭 선택 시 수행할 액션
