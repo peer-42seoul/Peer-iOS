@@ -30,6 +30,12 @@ struct PostListFilterView: View {
 		.frame(maxHeight: 70)
 		.sheet(isPresented: $showFilter, content: {
 			FilteringBottomSheet()
+				.ignoresSafeArea()
+				.presentationDetents([
+					.fraction(0.9)
+				])
+			// DragIndicatior 비활성화
+				.presentationDragIndicator(.hidden)
 		})
 	}
 }

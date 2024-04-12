@@ -24,7 +24,7 @@ struct PostListBody: View {
 							.onAppear {
 								guard let index = postVm.postListModel.posts
 									.firstIndex(
-										where: { $0.recruitID == post.recruitID} ) else { return }
+										where: { $0.recruitID == post.recruitID } ) else { return }
 								if index % 10 == 8 {
 									Task {
 										await postVm.process(intent: .scroll)
