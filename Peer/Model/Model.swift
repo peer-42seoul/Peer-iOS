@@ -18,31 +18,6 @@ struct Pageable: Codable {
 	let paged, unpaged: Bool
 }
 
-//struct Pagenation<T: Codable>: Codable {
-//	var content: T?
-//	var pagable: PagenationInfo
-//	var totalPage: Int?
-//	var totalElements: Int?
-//	var last: Bool?
-//	var size: Int?
-//	var number: Int?
-//	var sort: PagenationSort?
-//	var numberOfElements: Int?
-//	var first: Bool?
-//	var empty: Bool?
-//}
-
-//struct Pagenation<T: Codable>: Codable {
-//	let content: T
-//	let pageable: Pageable
-//	let last: Bool
-//	let totalPages, totalElements, size, number: Int
-//	let sort: Sort
-//	let first: Bool
-//	let numberOfElements: Int
-//	let empty: Bool
-//}
-
 struct Pagenation<T: Codable>: Codable {
 	let content: T
 	let pageable: Pageable

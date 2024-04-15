@@ -8,24 +8,26 @@
 import SwiftUI
 
 struct ContentView: View {
-
 	@EnvironmentObject var post: PostListVM
+	@State var isShow: Bool = false
 
-    var body: some View {
+	var body: some View {
 		ZStack {
-			if post.postListModel.loading {
-				SplashView()
-			} else {
+			if isShow {
 				MainPageView()
+			} else {
+				SplashView()
+					.onAppear {
+						DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+							isShow = true
+						}
+					}
 			}
 		}
-		.task {
-			await post.process(intent: .open)
-		}
-    }
+	}
 }
 
 #Preview {
-    ContentView()
+	ContentView()
 		.environmentObject(PostListVM())
 }
