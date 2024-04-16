@@ -31,6 +31,8 @@
 		D63F9B032BB6994100B18DDD /* MyTeamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63F9B022BB6994100B18DDD /* MyTeamView.swift */; };
 		D63F9B052BB6995500B18DDD /* HitchhikingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63F9B042BB6995500B18DDD /* HitchhikingView.swift */; };
 		D63F9B072BB6996800B18DDD /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63F9B062BB6996800B18DDD /* SettingView.swift */; };
+		D6406C342BCE692700BF8707 /* RelatedToCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6406C332BCE692700BF8707 /* RelatedToCard.swift */; };
+		D6406C362BCE697C00BF8707 /* ShowcasViewComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6406C352BCE697C00BF8707 /* ShowcasViewComponents.swift */; };
 		D644CF422BAC49C400853E4E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D644CF412BAC49C400853E4E /* LoginView.swift */; };
 		D644CF442BAC4C7E00853E4E /* NetworkVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D644CF432BAC4C7E00853E4E /* NetworkVM.swift */; };
 		D6458AEE2BA9AE0A00D80FA9 /* NetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6458AED2BA9AE0A00D80FA9 /* NetworkModel.swift */; };
@@ -128,6 +130,8 @@
 		D63F9B022BB6994100B18DDD /* MyTeamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTeamView.swift; sourceTree = "<group>"; };
 		D63F9B042BB6995500B18DDD /* HitchhikingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitchhikingView.swift; sourceTree = "<group>"; };
 		D63F9B062BB6996800B18DDD /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		D6406C332BCE692700BF8707 /* RelatedToCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelatedToCard.swift; sourceTree = "<group>"; };
+		D6406C352BCE697C00BF8707 /* ShowcasViewComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowcasViewComponents.swift; sourceTree = "<group>"; };
 		D644CF412BAC49C400853E4E /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		D644CF432BAC4C7E00853E4E /* NetworkVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkVM.swift; sourceTree = "<group>"; };
 		D6458AED2BA9AE0A00D80FA9 /* NetworkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkModel.swift; sourceTree = "<group>"; };
@@ -318,6 +322,8 @@
 			isa = PBXGroup;
 			children = (
 				D63F9B002BB6992F00B18DDD /* ShowCaseView.swift */,
+				D6406C332BCE692700BF8707 /* RelatedToCard.swift */,
+				D6406C352BCE697C00BF8707 /* ShowcasViewComponents.swift */,
 			);
 			path = ShowCase;
 			sourceTree = "<group>";
@@ -643,6 +649,7 @@
 				D67D03B02BB5A45B00C292FD /* AlertIntent.swift in Sources */,
 				D67D03A62BB59CE500C292FD /* TeamDetailVM.swift in Sources */,
 				D6458AF22BA9B48600D80FA9 /* PostIntent.swift in Sources */,
+				D6406C342BCE692700BF8707 /* RelatedToCard.swift in Sources */,
 				D67D03BA2BB5AC9900C292FD /* MessageIntent.swift in Sources */,
 				D60FDE892BC562B200354033 /* DocumentExtension.swift in Sources */,
 				D60FDE7C2BC5498700354033 /* MoreButton.swift in Sources */,
@@ -653,6 +660,7 @@
 				D60FDE832BC54D0700354033 /* AsyncImageView.swift in Sources */,
 				D6C942AC2BAAEA9A00757B42 /* MessageModel.swift in Sources */,
 				D67D03B62BB5A53500C292FD /* TeamListIntent.swift in Sources */,
+				D6406C362BCE697C00BF8707 /* ShowcasViewComponents.swift in Sources */,
 				D67D03B42BB5A52500C292FD /* HitchhikingIntent.swift in Sources */,
 				D68730D72BCD62F3006C93A1 /* ShowcaseModel.swift in Sources */,
 				D62637AD2B8C4180003F54E4 /* PeerApp.swift in Sources */,

@@ -9,15 +9,29 @@ import SwiftUI
 
 struct ShowCaseView: View {
 	@EnvironmentObject var showcase: ShowcaseVM
-    var body: some View {
+	var body: some View {
 		ZStack {
-			Color.primaryBackground
+			Color("PrimaryBackground")
+				   .ignoresSafeArea()
+
 			VStack(alignment: .center) {
-				// Header
+
 				ShowCaseHeaderView()
 					.padding(20)
-				// Body
-				ShowCaseBodyView()
+
+				NavigationStack {
+					VStack {
+						ShowcaseCardStack(
+							showcases: showcase.showcaseModel.showcases
+						) { item in
+							ShowcaseCardView(
+								title: item.name,
+								imageUrl: item.image
+							)
+							.padding(10)
+						}
+					}
+				}
 
 				Spacer()
 			}
@@ -27,42 +41,10 @@ struct ShowCaseView: View {
 				await showcase.process(intent: .first)
 			}
 		}
-    }
-}
-
-struct ShowcaseCardView: View {
-	var name: String
-	var id: Int
-	var body: some View {
-		Text("\(id) \(name)")
-	}
-}
-
-struct ShowCaseBodyView: View {
-	@EnvironmentObject var showcase: ShowcaseVM
-	var body: some View {
-		ZStack {
-			VStack(spacing: 20) {
-				ForEach(showcase.showcaseModel.showcases, id: \.id) { showcase in
-					ShowcaseCardView(name: showcase.name, id: showcase.id)
-				}
-			}
-		}
-	}
-}
-
-struct ShowCaseHeaderView: View {
-	var body: some View {
-		HStack {
-			Text("쇼케이스")
-				.font(.pretendardBold24)
-
-			Spacer()
-		}
 	}
 }
 
 #Preview {
-    ShowCaseView()
+	ShowCaseView()
 		.environmentObject(ShowcaseVM())
 }

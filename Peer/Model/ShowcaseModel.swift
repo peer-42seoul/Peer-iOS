@@ -13,7 +13,7 @@ struct ShowcaseTag: Codable {
 	var color: String?
 }
 
-struct Showcase: Codable {
+struct Showcase: Codable, Identifiable {
 	var id: Int
 	var image: String?
 	var name: String
