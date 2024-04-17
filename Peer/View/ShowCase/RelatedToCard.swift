@@ -8,14 +8,72 @@
 import SwiftUI
 
 struct ShowcaseCardView: View {
-	var title: String
-	var imageUrl: String?
+	var card: Showcase
 	var body: some View {
-		VStack {
-			ShowcaseCardImageView(imageUrl: imageUrl)
-				.frame(height: 500)
-			Text("\(title)")
+		ZStack {
+			Color.secondaryBackground
+			VStack(alignment: .leading) {
+				ShowcaseCardImageView(imageUrl: card.image)
+					.frame(height: 350)
+				HStack {
+					AsyncProfileImageView(imageUrl: card.teamLogo)
+
+					Text(card.name)
+						.font(.pretendardMedium18)
+						.foregroundColor(.alternativeText)
+
+					Spacer()
+					// TODO: 좋아요 버튼
+					// TODO: 관심목록 추가 버튼
+				}
+
+				HStack {
+					Text(card.description)
+						.font(.pretendardMedium16)
+						.lineLimit(3)
+				}
+				.frame(height: 80, alignment: .top)
+
+				VStack(spacing: 10) {
+					HStack {
+						Label("시작일", systemImage: "calendar")
+							.font(.pretendardRegular16)
+						Text(card.start)
+							.font(.pretendardRegular16)
+						Spacer()
+					}
+					HStack {
+						Label("종료일", systemImage: "calendar")
+							.font(.pretendardRegular16)
+						Text(card.end)
+							.font(.pretendardRegular16)
+						Spacer()
+					}
+
+					HStack {
+						Label("기술스택", systemImage: "tag")
+							.font(.pretendardRegular16)
+
+						if !card.skill.isEmpty {
+							ScrollView(.horizontal) {
+								HStack {
+									ForEach(card.skill, id: \.color) { tag in
+										TagView(name: tag.name!, color: tag.color!)
+											.scaleEffect(1)
+									}
+								}
+							}
+						}
+
+						Spacer()
+					}
+
+				}
+				Spacer()
+			}
+			.padding(20)
 		}
+		.padding(10)
 	}
 }
 
@@ -71,6 +129,7 @@ struct ShowcaseCardStack<Content: View, Item: RandomAccessCollection>: View wher
 	var isRotated: Bool = false
 	var showcases: Item
 	var content: (Item.Element) -> Content
+	@EnvironmentObject var showcaseVm: ShowcaseVM
 
 	var body: some View {
 		GeometryReader {
@@ -79,12 +138,19 @@ struct ShowcaseCardStack<Content: View, Item: RandomAccessCollection>: View wher
 
 			let size = $0.size
 			TabView {
-				ForEach(showcases) { showcase in
+				ForEach(Array(showcases.enumerated()), id: \.element.id) { index, showcase in
 					content(showcase)
 						.frame(
 							width: size.width - 10,
 							height: size.height)
 						.rotationEffect(.degrees(-90))
+						.onAppear {
+							if index == showcases.count - 2 {
+								Task {
+									await showcaseVm.process(intent: .scroll)
+								}
+							}
+						}
 				}
 			}
 			.frame(width: size.height, height: size.width)
@@ -99,8 +165,5 @@ struct ShowcaseCardStack<Content: View, Item: RandomAccessCollection>: View wher
 	ZStack {
 		Color.primaryBackground
 			.ignoresSafeArea()
-		ShowcaseCardView(
-			title: "example"
-		)
 	}
 }

@@ -25,7 +25,6 @@ struct PostListHeader: View {
 								.foregroundColor(.white)
 								.frame(width: 30, height: 30)
 								.padding(10)
-
 						}
 
 						Spacer()
@@ -49,7 +48,6 @@ struct PostListHeader: View {
 								.foregroundColor(.white)
 								.frame(width: 30, height: 30)
 								.padding(10)
-
 						}
 					}
 					.frame(maxHeight: .infinity)

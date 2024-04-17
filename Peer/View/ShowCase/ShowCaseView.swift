@@ -25,8 +25,7 @@ struct ShowCaseView: View {
 							showcases: showcase.showcaseModel.showcases
 						) { item in
 							ShowcaseCardView(
-								title: item.name,
-								imageUrl: item.image
+								card: item
 							)
 							.padding(10)
 						}
