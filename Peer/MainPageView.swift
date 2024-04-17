@@ -10,6 +10,7 @@ import SwiftUI
 struct MainPageView: View {
 	@EnvironmentObject var post: PostListVM
 	@StateObject var showcase: ShowcaseVM = ShowcaseVM()
+	@StateObject var hitchhiking: HitchhikingVM = HitchhikingVM()
 
 	@State var tabIndex = 0
 

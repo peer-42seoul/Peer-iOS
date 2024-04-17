@@ -8,6 +8,7 @@
 import Foundation
 
 enum HitchhikingIntent {
+	case initialize
 	case scroll
 	case touchInfomation
 	case like
