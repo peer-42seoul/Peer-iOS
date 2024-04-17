@@ -18,41 +18,40 @@ struct HitchHikingHeaderView: View {
 	}
 }
 
-//struct HitchHikingCardStack<Content: View, Item: RandomAccessCollection>: View  {
-//	var isRotated: Bool = false
-//	var items: Item
-//	var content: (Item.Element) -> Content
-//	@EnvironmentObject var showcaseVm: ShowcaseVM
-//
-//	var body: some View {
-//		GeometryReader {
-//			Color("PrimaryBackground")
-//				.ignoresSafeArea()
-//
-//			let size = $0.size
-//			TabView {
-//				ForEach(Array(items.enumerated()), id: \.element.id) { index, showcase in
-//					content(showcase)
-//						.frame(
-//							width: size.width - 10,
-//							height: size.height)
-//						.rotationEffect(.degrees(-90))
-//						.onAppear {
-//							if index == items.count - 2 {
-//								Task {
-//									await showcaseVm.process(intent: .scroll)
-//								}
-//							}
-//						}
-//				}
-//			}
-//			.frame(width: size.height, height: size.width)
-//			.rotationEffect(.degrees(90), anchor: .topLeading)
-//			.offset(x: size.width)
-//		}
-//		.tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
-//	}
-//}
+struct HitchHikingCardStack<Content: View, Item: RandomAccessCollection>: View where Item.Element: Identifiable  {
+	var isRotated: Bool = false
+	var items: Item
+	var content: (Item.Element) -> Content
+
+	var body: some View {
+		GeometryReader {
+			Color("PrimaryBackground")
+				.ignoresSafeArea()
+
+			let size = $0.size
+			TabView {
+				ForEach(Array(items.enumerated()), id: \.element.id) { index, showcase in
+					content(showcase)
+						.frame(
+							width: size.width - 10,
+							height: size.height)
+						.rotationEffect(.degrees(-90))
+						.onAppear {
+							if index == items.count - 2 {
+								Task {
+
+								}
+							}
+						}
+				}
+			}
+			.frame(width: size.height, height: size.width)
+			.rotationEffect(.degrees(90), anchor: .topLeading)
+			.offset(x: size.width)
+		}
+		.tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+	}
+}
 
 struct HitchHikingCardView: View {
 	var card: Hitchhiking
