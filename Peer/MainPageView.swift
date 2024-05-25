@@ -27,7 +27,7 @@ struct MainPageView: View {
 						Label("모집글", systemImage: "house.fill")
 					}
 
-				HitchhikingView()
+				HitchhikingView(hitch: hitchhiking)
 					.tag(1)
 					.tabItem {
 						Label("히치하이킹", systemImage: "rectangle.and.text.magnifyingglass")

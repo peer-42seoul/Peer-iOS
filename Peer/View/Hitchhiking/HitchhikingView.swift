@@ -7,6 +7,14 @@
 
 import SwiftUI
 
+/// TODO
+/// 1. 하단 앱바의 색상 맞추기
+/// 2. 전체 카드의 크기 고정(비율이라도)
+/// 3. 시작일 / 종료일 맞추기
+/// 4. 좋아요 / 관심 버튼 만들기
+/// 5. 관련 태그 달기
+/// 6. 상단의 크기 쇼케이스와 맞추기
+
 struct HitchHikingHeaderView: View {
 	var body: some View {
 		HStack {
@@ -118,7 +126,7 @@ struct HitchHikingCardView: View {
 }
 
 struct HitchhikingView: View {
-	@EnvironmentObject var hitch: HitchhikingVM
+	@ObservedObject var hitch: HitchhikingVM
 	var body: some View {
 		ZStack {
 			Color("PrimaryBackground")
@@ -154,6 +162,5 @@ struct HitchhikingView: View {
 }
 
 #Preview {
-	HitchhikingView()
-		.environmentObject(HitchhikingVM())
+	HitchhikingView(hitch: HitchhikingVM())
 }
