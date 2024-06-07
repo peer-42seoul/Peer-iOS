@@ -8,6 +8,7 @@
 import Foundation
 
 enum ShowcaseIntent {
+	case first
 	case scroll
 	case touchInfomation
 	case like

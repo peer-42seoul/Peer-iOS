@@ -9,6 +9,8 @@ import SwiftUI
 
 struct MainPageView: View {
 	@EnvironmentObject var post: PostListVM
+	@StateObject var showcase: ShowcaseVM = ShowcaseVM()
+	@StateObject var hitchhiking: HitchhikingVM = HitchhikingVM()
 
 	@State var tabIndex = 0
 
@@ -25,7 +27,7 @@ struct MainPageView: View {
 						Label("모집글", systemImage: "house.fill")
 					}
 
-				HitchhikingView()
+				HitchhikingView(hitch: hitchhiking)
 					.tag(1)
 					.tabItem {
 						Label("히치하이킹", systemImage: "rectangle.and.text.magnifyingglass")
@@ -36,6 +38,7 @@ struct MainPageView: View {
 					.tabItem {
 						Label("쇼케이스", systemImage: "medal")
 					}
+					.environmentObject(showcase)
 
 				MyTeamView()
 					.tag(3)
