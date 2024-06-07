@@ -77,14 +77,12 @@ struct PostDetailView: View {
 				Spacer()
 
 				HStack(alignment: .center, spacing: 10) {
-					Button {
-						// TODO: - 지원하기 API
-					} label: {
-						Text("지원하기")
-							.frame(maxWidth: 270, minHeight: 40)
-					}
-					.buttonStyle(.borderedProminent)
-					.disabled(postDetailModel.postDetail.status == "RECRUIT")
+                    // TODO: - 지원확인 모달 및 인터뷰 페이지로
+                    PurpleButton(
+                        disable: postDetailModel.postDetail.status == "RECRUIT",
+                        text: "지원하기",
+                        action: {}
+                    )
 
 					HeartButton(isClicked: postDetailModel.postDetail.favorite) {
 						// TODO: - 좋아요 API

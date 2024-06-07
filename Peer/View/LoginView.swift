@@ -10,7 +10,16 @@ import SwiftUI
 struct LoginView: View {
     var body: some View {
 		ZStack {
-			Color("StrongPurple")
+            Color(.primaryBackground)
+                .ignoresSafeArea()
+            
+            VStack {
+                Text("로그인")
+                    .font(.pretendardBold28)
+                
+                
+            }
+            
 		}
     }
 }
